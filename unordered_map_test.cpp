@@ -30,10 +30,7 @@ int	main(void)
 	unordered_map<string, test> hash;
 
 	for (int i = 0; i < 10000; ++i)
-	{
 		hash.insert(std::make_pair(std::to_string(i), test(i, i)));
-		/* code */
-	}
 	// hash.insert(std::make_pair("2", test(2)));
 	// hash.insert(std::make_pair("3", test(3)));
 
