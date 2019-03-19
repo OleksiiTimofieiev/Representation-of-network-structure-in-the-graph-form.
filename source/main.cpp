@@ -51,7 +51,7 @@ int		main(void)
 	std::ifstream 	fin;
 	std::pair<Vertex, Vertex> line;
 
-		int line_number = 0;
+	int line_number = 0;
 
 	// int ok = 0;
 	int not_ok = 0;
@@ -80,10 +80,10 @@ int		main(void)
 
 			// print_node(line.second);
 
-			std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
-				std::cout << element.second.Node_GUID << std::endl;
-			});
 		}
+			std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
+				std::cout << element.second.edges[0] << std::endl;
+			});
 	}
 
 	std::cout << "total not valid lines -> " << not_ok << std::endl;
