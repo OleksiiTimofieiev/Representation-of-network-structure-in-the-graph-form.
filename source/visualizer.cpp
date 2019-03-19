@@ -25,8 +25,14 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 
 	auto edges = hash[str].edges;
 
-	std::for_each(edges.begin(), edges.end(), [](std::pair<std::string, std::string> element) {
-		std::cout << element.second << std::endl;
+	std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
+		
+		auto vertex = database.hash;
+
+		std::cout << element.second;
+		std::cout << YELLOW << "Port             \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
+		std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
+		std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
 	});
 }
 

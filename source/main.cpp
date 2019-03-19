@@ -1,11 +1,10 @@
 #include "../includes/core.hpp"
 
-// TODO: delete debug variables from lexer ;
-// TODO: explain error manager;
+// TODO: explain error management;
 // TODO: explain data structure selection;
+// TODO: explain logic in lines;
+
 // TODO: handle errors with input;
-// TODO: visualization class;
-// TODO: core logic in lines;
 
 // -          show node neighbors <Node GUID>
 

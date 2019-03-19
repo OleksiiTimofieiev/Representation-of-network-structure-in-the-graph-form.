@@ -6,7 +6,6 @@
 #include <unordered_map>
 #include "colors.hpp"
 
-
 typedef enum 	vertex_option
 {
 	left_node = 1,
@@ -27,9 +26,13 @@ class 			Vertex // uses
 		std::string 			DeviceID;
 		std::string 			Revision;
 		std::string 			Link_State;
-		std::unordered_map<std::string, std::string> edges;
 
-	  	Vertex(void);
+		// std::string				Port;
+		// std::string 			Peer_Port;
+		
+		std::unordered_map<std::string, Vertex> edges;
+
+		Vertex(void);
 		Vertex(const std::smatch &result, options_of_construction var);
 		~Vertex(void);
 		
