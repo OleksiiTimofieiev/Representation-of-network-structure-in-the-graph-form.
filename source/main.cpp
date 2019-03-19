@@ -7,6 +7,12 @@
 // TODO: visualization class;
 // TODO: core logic in lines;
 
+// -          show node neighbors <Node GUID>
+
+// printing all neighbors of the node including DWN ports as follows:
+
+// Local Port, Local Port GUID, Peer Port, Peer Port GUID, Link State
+
 // try catch for data types;
 // check for overlap (bigge value)
 // obligatory parameters for the input;
