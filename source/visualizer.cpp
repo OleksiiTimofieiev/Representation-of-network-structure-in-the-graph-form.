@@ -30,13 +30,15 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 	});
 }
 
-void	Visualizer::show_node_reg_exp(const Database & database, const std::string str) const
+void	Visualizer::show_node_reg_exp(const Database & database, const std::string regex) const
 {
-	auto hash = database.hash;
+	auto 		hash = database.hash;
+	const 		std::regex regex_rule(regex);
+	std::smatch result;
 
-	std::for_each(hash.begin(), hash.end(), [str](std::pair<std::string, Vertex> element)
+	for (auto & it : database.hash)
 	{
-
-		std::cout << element.second << str << std::endl;
-	});
+		if (std::regex_match(it.second.Node_GUID, result, regex_rule))
+			std::cout << it.second  << std::endl;
+	}
 }

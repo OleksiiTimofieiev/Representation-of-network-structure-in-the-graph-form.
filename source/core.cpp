@@ -5,7 +5,7 @@ Core::~Core(){}
 
 void Core::main_cycle()
 {
-
+	int lines = 0;
 	fin.open(path);
 
 	if (!fin.is_open())
@@ -26,6 +26,7 @@ void Core::main_cycle()
 			if (line.first.Node_type != "empty_str") // add validation func
 			{
 				// std::cout << "test" << std::endl;
+				lines++;
 				parser.parse(line, database);
 			}
 
@@ -39,6 +40,7 @@ void Core::main_cycle()
 	}
 
 	std::cout << "total not valid lines -> " << not_ok << std::endl;
+	std::cout << "total lines 			-> " << lines << std::endl;
 
 	// for (const auto & pair : database.hash)
 	// {
@@ -53,6 +55,7 @@ void Core::main_cycle()
 	// visualizer.show_nodes_all(database);
 	// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
 	// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
+	visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 
 	fin.close();
 }

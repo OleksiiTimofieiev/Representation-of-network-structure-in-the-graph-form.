@@ -7,7 +7,7 @@
 class Database
 {
 public:
-	Database(/* args */);
+	Database();
 	~Database();
 	
 	std::unordered_map<std::string, Vertex> hash;
