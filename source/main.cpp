@@ -10,15 +10,11 @@ void	regex_check(std::string str)
 
 	if (std::regex_match(str, result, regex_rule))
 	{
-		std::cout << "------ cool ------" << std::endl;
 
 		std::cout << "Whole match : " << result.str(0) << std::endl;
-		std::cout << "First capturing group is '" << result.str(1)
-			 << "' which is captured at index " << result.position(1)
-			 << std::endl;
-		std::cout << "Second capturing group is '" << result.str(2)
-			 << "' which is captured at index " << result.position(2)
-			 << std::endl;
+		std::cout << "First capturing group is '" << result.str(1) << "' which is captured at index " << result.position(1) << std::endl;
+		std::cout << "Second capturing group is '" << result.str(2) << "' which is captured at index " << result.position(2) << std::endl;
+		std::cout << "------ cool ------" << std::endl;
 	}
 	else
 	{
@@ -35,6 +31,11 @@ int		main(void)
 	std::string 	path = "./test_file/opensm-subnet.lst";
 	std::ifstream 	fin;
 
+	int line_number = 0;
+
+	int ok = 0;
+	int not_ok = 0;
+
 	fin.open(path);
 
 	if (!fin.is_open())
@@ -47,9 +48,11 @@ int		main(void)
 		while (!(fin.eof()))
 		{
 			getline(fin, input);
+			line_number++;
 
+			std::cout << line_number << " -> ";
 			regex_check(input);
-			std::cout << input << std::endl;
+			// std::cout << input << std::endl;
 		}
 	}
 	fin.close();
