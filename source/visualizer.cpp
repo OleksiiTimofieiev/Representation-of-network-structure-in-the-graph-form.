@@ -14,9 +14,11 @@ void	Visualizer::show_nodes_all(const Database & database) const
 void	Visualizer::show_node(const Database & database, const std::string str) const 
 {
 	auto hash = database.hash;
-
-	std::cout << hash[str] << std::endl;
-
+	
+	if (hash[str].Node_type != "empty_str")
+		std::cout << hash[str] << std::endl;
+	else
+		std::cout << MAGENTA << "Node not found." << RESET << std::endl;
 };
 
 void	Visualizer::show_node_neighbors(const Database & database, const std::string str) const
@@ -25,16 +27,23 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 
 	auto edges = hash[str].edges;
 
-	std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
-		
-		auto vertex = database.hash;
+	auto size = hash[str].edges.size();
 
-		std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &vertex[str].Port[3] << RESET << std::endl;
-		std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &vertex[str].Port_GUID[9] << RESET << std::endl;
-		std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &element.second.Port[3] << RESET << std::endl;
-		std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &element.second.Port_GUID[9] << RESET << std::endl;
-		std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << element.second.Link_State << RESET << std::endl << std::endl;
-	});
+	if (size > 0)
+	{
+		std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
+			
+			auto vertex = database.hash;
+
+			std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &vertex[str].Port[3] << RESET << std::endl;
+			std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &vertex[str].Port_GUID[9] << RESET << std::endl;
+			std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &element.second.Port[3] << RESET << std::endl;
+			std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &element.second.Port_GUID[9] << RESET << std::endl;
+			std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << element.second.Link_State << RESET << std::endl << std::endl;
+		});
+	}
+	else
+		std::cout << MAGENTA << "Node not found." << RESET << std::endl;
 }
 
 void	Visualizer::show_node_reg_exp(const Database & database, const std::string regex) const
@@ -53,5 +62,5 @@ void	Visualizer::show_node_reg_exp(const Database & database, const std::string 
 		}
 	}
 	if (!found)
-		std::cout << MAGENTA << "Not found." << RESET << std::endl;
+		std::cout << MAGENTA << "Node not found." << RESET << std::endl;
 }
