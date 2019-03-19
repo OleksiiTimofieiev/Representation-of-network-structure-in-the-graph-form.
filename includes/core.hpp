@@ -27,6 +27,7 @@ class Core
 	  public:
 		Core(const std::string path);
 		~Core();
+		
 		void	main_cycle(void);
 };
 

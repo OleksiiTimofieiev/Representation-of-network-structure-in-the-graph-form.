@@ -27,9 +27,9 @@
 
 int		main(void)
 {
-	Core core("./test_file/opensm-subnet.lst");
+	Core core("./test_file/opensm-subnet.lst"); /* init of the core class */
 
-	core.main_cycle();
+	core.main_cycle(); /* start of the main routine */
 
 	system("leaks -q infiniBand_network_graph");
 
