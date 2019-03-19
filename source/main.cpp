@@ -17,6 +17,10 @@
 // try catch for data types;
 // check for overlap (bigge value)
 // obligatory prameters;
+// not unique inode
+// add to the both vertices
+// if do not exists, add to edges;
+// use binary black - red tree
 
 int		main(void)
 {
