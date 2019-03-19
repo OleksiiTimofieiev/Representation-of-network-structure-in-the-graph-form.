@@ -5,6 +5,7 @@
 // TODO: explain data structure selection;
 // TODO: handle errors with input;
 // TODO: visualization class;
+// TODO: core logic in lines;
 
 // try catch for data types;
 // check for overlap (bigge value)

@@ -1,7 +1,6 @@
 #include "../includes/core.hpp"
 
 Core::Core(const std::string var) : path(var) {}
-
 Core::~Core(){}
 
 void Core::main_cycle()
