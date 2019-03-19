@@ -3,9 +3,9 @@
 
 #include "../includes/lexer.hpp"
 
-// TODO: parser;
-
-
+// TODO: parser ;
+// TODO: change the name of the binary file ;
+s
 int		main(void)
 {
 	Lexer lexer;
