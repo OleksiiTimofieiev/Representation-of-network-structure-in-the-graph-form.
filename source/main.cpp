@@ -11,6 +11,7 @@
 // TODO: explain data structure selection;
 // TODO: handle errors with input;
 // TODO: visualization class;
+// TODO: no leaks
 
 // space complexity: o(v) + o(e);
 // unordered_map;
@@ -22,6 +23,21 @@
 // if do not exists, add to edges;
 // use binary black - red tree
 
+void	print_node(const Vertex & vertex)
+{
+	std::cout << vertex.Node_type << std::endl;
+	std::cout << vertex.Number_of_ports << std::endl;
+	std::cout << vertex.Node_GUID << std::endl;
+	std::cout << vertex.Port_GUID << std::endl;
+	std::cout << vertex.SystemGUID << std::endl;
+	std::cout << vertex.Node_description << std::endl;
+	std::cout << vertex.LID << std::endl;
+	std::cout << vertex.Vendor_ID << std::endl;
+	std::cout << vertex.DeviceID << std::endl;
+	std::cout << vertex.Revision << std::endl;
+	std::cout << vertex.Link_State << std::endl;
+}
+
 int		main(void)
 {
 	Lexer lexer; /* class to parse and validate input */
@@ -30,8 +46,9 @@ int		main(void)
 	std::string 	path = "./test_file/opensm-subnet.lst";
 
 	std::ifstream 	fin;
+	std::pair<Vertex, Vertex> line;
 
-	int line_number = 0;
+		int line_number = 0;
 
 	// int ok = 0;
 	int not_ok = 0;
@@ -51,13 +68,22 @@ int		main(void)
 
 			line_number++;
 
-			lexer.regex_check(input, &not_ok, line_number);
+			line = lexer.regex_check(input, &not_ok, line_number);
+
+			print_node(line.first);
+
+			std::cout << "---------------------"  << std::endl;
+
+			print_node(line.second);
+
 		}
 	}
 
 	std::cout << "total not valid lines -> " << not_ok << std::endl;
 
 	fin.close();
+
+	system("leaks -q graph");
 
 	return (0);
 }
