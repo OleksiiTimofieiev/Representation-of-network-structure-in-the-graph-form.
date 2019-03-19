@@ -7,28 +7,51 @@ void Core::console_input_handler(void)
 {
 	while (42)
 	{
-		std::cout << "\x1b[36mPlease, select an option:\x1B[0m" << std::endl << std::endl;
+		std::cout << "\x1b[36mPlease, select an option:[0 - 3] \x1B[0m" << std::endl;
 
 		if (std::getline(std::cin, input))
 		{
-			std::cout << "selected -> " << input << std::endl;
-
 
 			if (input == "4")
 				break;
+			else if (input == "0")
+			{
+				visualizer.show_nodes_all(database);
+				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
+				// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
+				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
+				continue ;
+			}
 			else if (input == "1")
 			{
-				// std::cout << "\x1b[36mPlease, select correct option.\x1B[0m" << std::endl << std::endl;
+				// visualizer.show_nodes_all(database);
+				visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
+				// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
+				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 				continue ;
 			}
 			else if (input == "2")
 			{
-				continue ;
+				// visualizer.show_nodes_all(database);
+				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
+				visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
+				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
+				continue;
 			}
 			else if (input == "3")
 			{
+				// visualizer.show_nodes_all(database);
+				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
+				// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
+				visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 				continue;
 			}
+			else
+			{
+				std::cout << "selected -> " << input << std::endl;
+				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
+			}
+			
 		};
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
