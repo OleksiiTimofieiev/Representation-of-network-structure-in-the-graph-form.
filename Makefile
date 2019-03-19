@@ -1,6 +1,6 @@
 NAME		=	infiniBand_network_graph
 FLAGS		= 	-Wall -Werror -Wextra
-COMPILER	=	clang++ -std=c++11
+COMPILER	=	g++ -std=c++11
 
 DIR_INC		=	./includes/
 DIR_SRC		=	./source/
@@ -13,6 +13,7 @@ HPP			=	lexer.hpp \
 				database.hpp \
 				parser.hpp \
 				visualizer.hpp \
+				colors.hpp \
 				core.hpp \
 
 #-------------------------- Source files -------------------------------------------
