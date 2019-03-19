@@ -1,11 +1,7 @@
 #include "../includes/core.hpp"
 
-// TODO: explain logic in lines;
-// TODO: no such node;
-// TODO: type conversion;
-// TODO: validation: SW -> CA, SW, RT;
-// TODO: check all classes for the comments;
-
+// validation: SW -> CA, SW, RT;
+// type conversion;
 // try catch for data types;
 // check for overlap (big value)
 
@@ -21,7 +17,7 @@ int		main(void)
 }
 
 // error management: 
-
+// explain logic in lines;
 // - not unique NodeGUID
 // - full confirmity with the line structure for every parameter
 // - left in string type in order to save place;
