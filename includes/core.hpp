@@ -25,6 +25,7 @@ class Core
 		Core(const std::string path);
 		~Core();
 		
+		void	menu(void);
 		void	main_cycle(void);
 };
 

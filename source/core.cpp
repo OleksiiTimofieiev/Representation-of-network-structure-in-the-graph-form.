@@ -3,6 +3,15 @@
 Core::Core(const std::string var) : path(var) {}
 Core::~Core(){}
 
+void Core::menu(void)
+{
+	std::cout << "0. show nodes all;" << std::endl;
+	std::cout << "1. show node;" << std::endl;
+	std::cout << "2. show node neighbors;" << std::endl;
+	std::cout << "3. show node reg exp;" << std::endl;
+	std::cout << "4. terminate the program;" << std::endl;
+}
+
 void Core::console_input_handler(void)
 {
 	std::string base("NodeGUID:");
@@ -10,6 +19,7 @@ void Core::console_input_handler(void)
 	while (42)
 	{
 		std::cout << "\x1b[36mPlease, select an option:[0 - 3] \x1B[0m" << std::endl;
+		this->menu();
 
 		if (std::getline(std::cin, input))
 		{
