@@ -4,6 +4,7 @@
 
 // TODO: parser ;
 // TODO: change the name of the binary file ;
+// TODO: check for leaks;
 
 int		main(void)
 {
@@ -11,6 +12,7 @@ int		main(void)
 
 	std::string		input;
 	std::string 	path = "./test_file/opensm-subnet.lst";
+
 	std::ifstream 	fin;
 
 	int line_number = 0;
