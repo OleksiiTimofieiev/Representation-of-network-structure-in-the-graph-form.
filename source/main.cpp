@@ -4,7 +4,6 @@
 #include "../includes/parser.hpp"
 
 // TODO: ADT main class;
-// TODO: parser ;
 // TODO: change the name of the binary file ;
 // TODO: check for leaks;
 // TODO: delete debug variables from lexer ;
