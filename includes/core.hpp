@@ -2,10 +2,24 @@
 #define CORE_HPP
 
 #include <fstream>
+#include <functional>
+#include <vector>
 
 #include "lexer.hpp"
 #include "parser.hpp"
 #include "visualizer.hpp"
+
+class Core;
+
+// typedef std::function<void(void)> f;
+
+enum 
+{
+	show_nodes_all = 0,
+	show_node,
+	show_node_neighbors,
+	show_node_reg_exp,
+}	func_option;
 
 class Core
 {
@@ -20,13 +34,21 @@ class Core
 		std::string 				path; /* path to the file for reading purposes */
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
-		void 	console_input_handler(void);
-	public: 
-		Core(const std::string path);
-		~Core();
+		void 						console_input_handler(void) ;
+		void 						menu(void) const;
+		void						show_all(void) const;
+		void 						show_node(void) const;
+		void 						show_node_neighbors(void) const;
+
+		// f x[4];
+
+		std::function<void(void)> f[4];
+
+		public : 
+			Core(const std::string path);
+		~Core						();
 		
-		void	menu(void);
-		void	main_cycle(void);
+		void						main_cycle(void);
 };
 
 #endif
