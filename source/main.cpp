@@ -17,7 +17,21 @@ void	regex_check(std::string str, int *not_ok, int line_number)
 		// std::cout << "Whole match : " << result.str(0) << std::endl;
 		// std::cout << "First capturing group is '" << result.str(1) << "' which is captured at index " << result.position(1) << std::endl;
 		// std::cout << "Second capturing group is '" << result.str(2) << "' which is captured at index " << result.position(2) << std::endl;
-		// std::cout << "------ cool ------" << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(3) << "' which is captured at index " << result.position(3) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(4) << "' which is captured at index " << result.position(4) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(5) << "' which is captured at index " << result.position(5) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(6) << "' which is captured at index " << result.position(6) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(7) << "' which is captured at index " << result.position(7) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(8) << "' which is captured at index " << result.position(8) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(9) << "' which is captured at index " << result.position(9) << std::endl;
+		// std::cout << "Second capturing group is '" << result.str(10) << "' which is captured at index " << result.position(10) << std::endl;
+
+		std::cout << "------ cool ------" << std::endl;
+
+		for (std::smatch::iterator it = result.begin() + 1; it != result.end(); ++it)
+		{
+			std::cout << *it << std::endl;
+		}
 	}
 	else
 	{
