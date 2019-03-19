@@ -97,9 +97,9 @@ int		main(void)
 	// 	std::cout << pair.second.Node_GUID << '\n';
 	// }
 
-	std::string str = "NodeGUID:7cfe900300f21a00";
+	std::string str = "NodeGUID:7cfe9003004b0700";
 
-	std::cout << database.hash[str].Node_type << std::endl;
+	// std::cout << database.hash[str].Node_type << std::endl;
 
 	size_t len = database.hash[str].edges.size();
 
