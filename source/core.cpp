@@ -13,7 +13,8 @@ void Core::console_input_handler(void)
 		{
 			if (input == "4")
 				break;
-			else if (input == "0")
+				
+			if (input == "0")
 			{
 				visualizer.show_nodes_all(database);
 				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
