@@ -5,6 +5,7 @@
 
 #include "lexer.hpp"
 #include "parser.hpp"
+#include "visualizer.hpp"
 
 class Core
 {
@@ -12,6 +13,7 @@ private:
 	Lexer		lexer; /* class to validate input */
 	Parser		parser; /* class to push input to memory */
 	Database	database; /* class to keep the information */
+	Visualizer	visualizer; /* class for the data visualization */
 
 	std::ifstream fin; /* file descriptor to the input file */
 	std::string input; /* container for the line read */
