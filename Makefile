@@ -12,6 +12,8 @@ HPP			=	lexer.hpp \
 				vertex.hpp \
 				database.hpp \
 				parser.hpp \
+				visualizer.hpp \
+				core.hpp \
 
 #-------------------------- Source files -------------------------------------------
 
@@ -20,6 +22,8 @@ SRC			=	main.cpp \
 				vertex.cpp \
 				parser.cpp \
 				database.cpp \
+				visualizer.cpp \
+				core.cpp \
 
 INC_PATH 	= 	$(addprefix $(DIR_INC), $(HPP))
 OBJ 		= 	$(addprefix $(DIR_OBJ), $(SRC:.cpp=.o))

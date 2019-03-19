@@ -11,8 +11,8 @@ void Parser::parse(const std::pair<Vertex, Vertex> & line, Database & database)
 	database.hash[line.first.Node_GUID].edges.insert({line.second.Node_GUID, line.second.Node_GUID});
 	database.hash[line.second.Node_GUID].edges.insert({line.first.Node_GUID, line.first.Node_GUID});
 
-	// database.hash[line.second.Node_GUID].edges.push_back(line.first.Node_GUID);
 }
+	// database.hash[line.second.Node_GUID].edges.push_back(line.first.Node_GUID);
 
 	// hash.insert(std::make_pair(std::to_string(i), test(i, i)));
 	// // hash.insert(std::make_pair("2", test(2)));
