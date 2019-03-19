@@ -12,7 +12,7 @@ typedef enum 	vertex_option
 	right_node
 }				options_of_construction; 		
 
-class 			Vertex // uses
+class 			Vertex
 {
 	public:
 		std::string 			Node_type;
@@ -26,9 +26,7 @@ class 			Vertex // uses
 		std::string 			DeviceID;
 		std::string 			Revision;
 		std::string 			Link_State;
-
-		// std::string				Port;
-		// std::string 			Peer_Port;
+		std::string				Port;
 		
 		std::unordered_map<std::string, Vertex> edges;
 

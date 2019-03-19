@@ -29,10 +29,14 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 		
 		auto vertex = database.hash;
 
-		std::cout << element.second;
-		std::cout << YELLOW << "Port             \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
-		std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
-		std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
+		std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << vertex[str].Port << RESET << std::endl;
+		std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << vertex[str].Port_GUID << RESET << std::endl;
+
+		std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << element.second.Port << RESET << std::endl;
+		std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << element.second.Port_GUID << RESET << std::endl;
+
+		std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << element.second.Link_State << RESET << std::endl;
+
 	});
 }
 

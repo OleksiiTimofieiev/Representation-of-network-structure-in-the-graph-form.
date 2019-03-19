@@ -22,6 +22,7 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 		DeviceID = result[7];
 		Revision = result[8];
 		Link_State = result[26];
+		Port = result[11];
 	}
 	else
 	{
@@ -36,6 +37,7 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 		DeviceID = result[18];
 		Revision = result[19];
 		Link_State = result[26];
+		Port = result[22];
 	}
 }
 
