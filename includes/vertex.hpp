@@ -6,6 +6,8 @@
 #include <unordered_map>
 #include "colors.hpp"
 
+class 			Vertex;
+
 typedef enum 	vertex_option
 {
 	left_node = 1,
@@ -27,12 +29,11 @@ class 			Vertex
 		std::string 			Revision;
 		std::string 			Link_State;
 		std::string				Port;
-		
+
 		Vertex(void);
 		Vertex(const std::smatch & result, options_of_construction var);
 		~Vertex(void);
 
-		
 		std::unordered_map<std::string, Vertex> edges;
 
 		friend std::ostream &operator<<(std::ostream & s, const Vertex & v);
