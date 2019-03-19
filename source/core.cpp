@@ -2,13 +2,10 @@
 
 Core::Core(const std::string var) : path(var)
 {
-	// x[0](&show_all);
-	f[0] = [&](void) { show_nodes_all(); };
-	f[1] = [&](void) { show_node(); };
-	f[2] = [&](void) { show_node_neighbors(); };
-	f[3] = [&](void) { show_node_reg_exp(); };
-
-	// x[1] = &Core::show_node;
+	funcs[0] = [&] (void) { show_nodes_all(); };
+	funcs[1] = [&] (void) { show_node(); };
+	funcs[2] = [&] (void) { show_node_neighbors(); };
+	funcs[3] = [&] (void) { show_node_reg_exp(); };
 }
 Core::~Core(){}
 
@@ -33,7 +30,7 @@ void Core::show_node(void) const
 	
 	std::string node_guid;
 
-	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21aa0\x1B[0m" << std::endl;
+	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21b00\x1B[0m" << std::endl;
 
 	std::getline(std::cin, node_guid);
 	std::string input_buf = base + node_guid;
@@ -46,7 +43,7 @@ void Core::show_node_neighbors(void) const
 	std::string base("NodeGUID:");
 
 	std::string node_guid;
-	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21aa0\x1B[0m" << std::endl;
+	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21b00\x1B[0m" << std::endl;
 
 	std::getline(std::cin, node_guid);
 	std::string input_buf = base + node_guid;
@@ -98,13 +95,17 @@ void Core::console_input_handler(void)
 			else if (input == "3")
 				_func_option = SHOW_NODE_REG_EXP;
 
-			this->f[_func_option]();
+			funcs[_func_option]();
 
-			std::cout << "\x1b[33mDo you want to continue ? y / n \x1B[0m" << std::endl;
-			std::getline(std::cin, input);
+			std::cout << "\u001b[36;1mDo you want to continue ? y / n \x1B[0m" << std::endl;
 
-			if (input == "y")
-				continue;
+			if (std::getline(std::cin, input))
+			{
+				if (input == "y")
+					continue;
+				else
+					break ;
+			}
 			else
 				break ;
 		};

@@ -39,7 +39,7 @@ class Core
 		void						show_node_reg_exp(void) const;
 		void 						console_input_handler(void);
 
-		std::function<void(void)> f[4];
+		std::function<void(void)> 	funcs[4];
 
 		public: 
 			Core(const std::string path);
