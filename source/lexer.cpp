@@ -73,15 +73,16 @@ std::pair<Vertex,Vertex> Lexer::regex_check(std::string str, int *not_ok, int li
 		// std::cout << "Second capturing group is '" << result.str(10) << "' which is captured at index " << result.position(10) << std::endl;
 
 		// std::cout << "------ cool ------" << std::endl;
-		int i = 0;
+		// int i = 0;
 
-		for (std::smatch::iterator it = result.begin(); it != result.end(); ++it )
-		{
-			std::cout << i++ << " -> " << *it << std::endl;
-		}
+		// for (std::smatch::iterator it = result.begin(); it != result.end(); ++it )
+		// {
+		// 	std::cout << i++ << " -> " << *it << std::endl;
+		// }
 
 		option = left;
 		Vertex left(result, option);
+
 		option = right;
 		Vertex right(result, option);
 
