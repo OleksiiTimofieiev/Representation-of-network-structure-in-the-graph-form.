@@ -10,6 +10,7 @@
 // TODO: explain error manager;
 // TODO: explain data structure selection;
 // TODO: handle errors with input;
+// TODO: visualization class;
 
 // space complexity: o(v) + o(e);
 // unordered_map;
