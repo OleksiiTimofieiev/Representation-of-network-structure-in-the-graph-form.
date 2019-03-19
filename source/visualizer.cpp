@@ -13,8 +13,8 @@ void Visualizer::show_nodes_all(const Database &database) const
 
 void Visualizer::show_node(const Database & database, const std::string str) const 
 {
-	auto hash = database.hash;
 
-	std::cout << hash[str] << std::endl;
+
+	std::cout << database.hash[str] << std::endl;
 
 };
