@@ -20,8 +20,8 @@ class Core
 		std::string 				path; /* path to the file for reading purposes */
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
-	  public:
-		Core(const std::string path);
+		void 	console_input_handler(void);
+	public : Core(const std::string path);
 		~Core();
 		
 		void	main_cycle(void);

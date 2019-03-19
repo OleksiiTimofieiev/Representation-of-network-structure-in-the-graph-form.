@@ -3,14 +3,22 @@
 Core::Core(const std::string var) : path(var) {}
 Core::~Core(){}
 
-// void correct_lines(Vertex &vertex)
-// {
-// 	vertex.Number_of_ports.erase(0, 6);
-// 	vertex.Node_GUID.erase(0, 9);
-// 	vertex.Port_GUID.erase(0, 9);
-// 	vertex.LID.erase(0, 4);
-// 	vertex.Port.erase(0, 3);
-// };
+void Core::console_input_handler(void)
+{
+	bool reading = true;
+
+	while (reading)
+	{
+		if (std::getline(std::cin, input))
+		{
+			
+
+			if (input == "4")
+				break;
+		};
+	}
+	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
+}
 
 void Core::main_cycle()
 {
@@ -41,15 +49,16 @@ void Core::main_cycle()
 
 				parser.parse(line, database);
 			}
-
 			// std::cout << "---------------------"  << std::endl;
-
 			// print_node(line.second);
 		}
 		// std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
 		// 	std::cout << element.second.edges[0] << std::endl;
 		// });
 	}
+	fin.close();
+
+	this->console_input_handler();
 
 	// std::cout << "total not valid lines -> " << not_ok << std::endl;
 	// std::cout << "total lines 			-> " << lines << std::endl;
@@ -69,5 +78,4 @@ void Core::main_cycle()
 	// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
 	// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 
-	fin.close();
 }
