@@ -1,5 +1,8 @@
 #include "../includes/vertex.hpp"
 
+Vertex::~Vertex() 	{}
+Vertex::Vertex() 	{}
+
 Vertex::Vertex(const std::smatch &result, options_of_construction var)
 {
 	if (var == left_node)
@@ -32,5 +35,3 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 	}
 }
 
-Vertex::~Vertex() {}
-Vertex::Vertex() {}
