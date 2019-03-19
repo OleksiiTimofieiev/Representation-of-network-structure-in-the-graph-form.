@@ -9,11 +9,13 @@ DIR_OBJ		= 	./obj/
 #-------------------------- Header files  ------------------------------------------
 
 HPP			=	lexer.hpp \
+				parser.hpp \
 
 #-------------------------- Source files -------------------------------------------
 
 SRC			=	main.cpp \
 				lexer.cpp \
+				# parser.cpp \
 
 INC_PATH 	= 	$(addprefix $(DIR_INC), $(HPP))
 OBJ 		= 	$(addprefix $(DIR_OBJ), $(SRC:.cpp=.o))
