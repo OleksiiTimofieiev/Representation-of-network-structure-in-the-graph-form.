@@ -1,4 +1,4 @@
-NAME		=	graph
+NAME		=	infiniBand_network_graph
 FLAGS		= 	-Wall -Werror -Wextra
 COMPILER	=	clang++ -std=c++11
 

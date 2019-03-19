@@ -117,7 +117,7 @@ int		main(void)
 
 	fin.close();
 
-	system("leaks -q graph");
+	system("leaks -q infiniBand_network_graph");
 
 	return (0);
 }
