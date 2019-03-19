@@ -9,16 +9,13 @@
 #include "parser.hpp"
 #include "visualizer.hpp"
 
-class Core;
 
-// typedef std::function<void(void)> f;
 
-enum 
-{
-	show_nodes_all = 0,
-	show_node,
-	show_node_neighbors,
-	show_node_reg_exp,
+typedef enum var {
+	SHOW_NODES_ALL = 0,
+	SHOW_NODE,
+	SHOW_NODE_NEIGHBOURS,
+	SHOW_NODE_REG_EXP,
 }	func_option;
 
 class Core
@@ -34,19 +31,19 @@ class Core
 		std::string 				path; /* path to the file for reading purposes */
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
-		void 						console_input_handler(void) ;
+
 		void 						menu(void) const;
-		void						show_all(void) const;
+		void						show_nodes_all(void) const;
 		void 						show_node(void) const;
 		void 						show_node_neighbors(void) const;
-
-		// f x[4];
+		void						show_node_reg_exp(void) const;
+		void 						console_input_handler(void);
 
 		std::function<void(void)> f[4];
 
-		public : 
+		public: 
 			Core(const std::string path);
-		~Core						();
+			~Core						();
 		
 		void						main_cycle(void);
 };

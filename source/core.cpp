@@ -3,10 +3,10 @@
 Core::Core(const std::string var) : path(var)
 {
 	// x[0](&show_all);
-	f[0] = [&](void) { show_all(); };
+	f[0] = [&](void) { show_nodes_all(); };
 	f[1] = [&](void) { show_node(); };
-	f[2] = [&](void) { show_all(); };
-	f[3] = [&](void) { show_all(); };
+	f[2] = [&](void) { show_node_neighbors(); };
+	f[3] = [&](void) { show_node_reg_exp(); };
 
 	// x[1] = &Core::show_node;
 }
@@ -21,22 +21,9 @@ void Core::menu(void) const
 	std::cout << "\x1b[32m4.\x1b[0m terminate the program;" << std::endl;
 }
 
-void Core::show_all(void) const
+void Core::show_nodes_all(void) const
 {
 	visualizer.show_nodes_all(database);
-}
-
-void Core::show_node_neighbors(void) const
-{
-	std::string base("NodeGUID:");
-
-	std::string node_guid;
-	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21aa0\x1B[0m" << std::endl;
-
-	std::getline(std::cin, node_guid);
-	std::string input_buf = base + node_guid;
-
-	visualizer.show_node_neighbors(database, input_buf);
 }
 
 void Core::show_node(void) const
@@ -53,9 +40,35 @@ void Core::show_node(void) const
 	visualizer.show_node(database, input_buf);
 }
 
+void Core::show_node_neighbors(void) const
+{
+	std::string base("NodeGUID:");
+
+	std::string node_guid;
+	std::cout << "\x1b[36mPlease, enter the Node GUID. format: 7cfe900300f21aa0\x1B[0m" << std::endl;
+
+	std::getline(std::cin, node_guid);
+	std::string input_buf = base + node_guid;
+
+	visualizer.show_node_neighbors(database, input_buf);
+}
+
+void Core::show_node_reg_exp(void) const
+{
+	std::string base("NodeGUID:");
+	std::string regex;
+	std::cout << "\x1b[36mPlease, enter the Node GUID. format: regex\x1B[0m" << std::endl;
+
+	std::getline(std::cin, regex);
+	std::string input_buf = base + regex;
+
+	visualizer.show_node_reg_exp(database, input_buf);
+}
+
 void Core::console_input_handler(void)
 {
 	std::string base("NodeGUID:");
+	func_option _func_option;
 
 	while (42)
 	{
@@ -66,43 +79,28 @@ void Core::console_input_handler(void)
 		{
 			if (input == "4")
 				break;
-				
+			// else if (input != "0" || input != "1" || input != "2" || input != "3")
+			// {
+			// 	std::cout << "selected -> " << input << std::endl;
+			// 	std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
+
+			// 	this->menu();
+
+			// 	continue;
+			// }
+
 			if (input == "0")
-			{
-				this->f[0]();
-				continue ;
-			}
+				_func_option = SHOW_NODES_ALL;
 			else if (input == "1")
-			{
-				this->f[1]();
-				continue ;
-			}
+				_func_option = SHOW_NODE;
 			else if (input == "2")
-			{
-				this->f[2]();
-				continue;
-			}
+				_func_option = SHOW_NODE_NEIGHBOURS;
 			else if (input == "3")
-			{
-				std::string regex;
-				std::cout << "\x1b[36mPlease, enter the Node GUID. format: regex\x1B[0m" << std::endl;
-				
-				std::getline(std::cin, regex);
-				std::string input_buf = base + regex;
-				
-				visualizer.show_node_reg_exp(database, input_buf);
-				
-				continue;
-			}
-			else
-			{
-				std::cout << "selected -> " << input << std::endl;
-				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
-				
-				this->menu();
-				
-				continue ;
-			}
+				_func_option = SHOW_NODE_REG_EXP;
+
+			this->f[_func_option]();
+			
+			continue;
 		};
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
