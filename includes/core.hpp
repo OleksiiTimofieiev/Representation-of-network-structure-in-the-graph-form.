@@ -8,6 +8,7 @@
 #include "lexer.hpp"
 #include "parser.hpp"
 #include "visualizer.hpp"
+#include "vertex.hpp"
 
 typedef enum var {
 	SHOW_NODES_ALL = 0,
