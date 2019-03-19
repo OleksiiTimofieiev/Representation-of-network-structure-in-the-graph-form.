@@ -41,14 +41,15 @@ void	print_node(const Vertex & vertex)
 
 int		main(void)
 {
-	Lexer lexer; /* class to parse and validate input */
-	Parser parser;
-	Database database;
+	Lexer 			lexer; /* class to parse and validate input */
+	Parser 			parser;
+	Database 		database;
 
 	std::string		input;
 	std::string 	path = "./test_file/opensm-subnet.lst";
 
 	std::ifstream 	fin;
+
 	std::pair<Vertex, Vertex> line;
 
 	int line_number = 0;
@@ -72,21 +73,31 @@ int		main(void)
 			line_number++;
 
 			line = lexer.regex_check(input, &not_ok, line_number);
-			parser.parse(line, database);
 
-			// print_node(line.first);
+			if (line.first.Node_type != "empty_str")
+			{
+				// std::cout << "test" << std::endl;
+				parser.parse(line, database);
+			}
 
 			// std::cout << "---------------------"  << std::endl;
 
 			// print_node(line.second);
 
 		}
-			std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
-				std::cout << element.second.edges[0] << std::endl;
-			});
+			// std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
+			// 	std::cout << element.second.edges[0] << std::endl;
+			// });
 	}
 
 	std::cout << "total not valid lines -> " << not_ok << std::endl;
+
+	// for (const auto & pair : database.hash)
+	// {
+	// 	std::cout << pair.second.Node_GUID << '\n';
+	// }
+
+	std::cout << database.hash["NodeGUID:248a0703005c9fa0"].Node_type << std::endl;
 
 	fin.close();
 

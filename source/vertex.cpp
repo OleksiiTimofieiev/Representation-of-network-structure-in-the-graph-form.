@@ -1,7 +1,11 @@
 #include "../includes/vertex.hpp"
 
-Vertex::~Vertex() 	{}
-Vertex::Vertex() 	{}
+Vertex::Vertex()
+{
+	Node_type = "empty_str";
+}
+
+Vertex::~Vertex() {}
 
 Vertex::Vertex(const std::smatch &result, options_of_construction var)
 {
