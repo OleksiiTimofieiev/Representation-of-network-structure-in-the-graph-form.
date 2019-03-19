@@ -5,6 +5,7 @@
 // TODO: parser ;
 // TODO: change the name of the binary file ;
 // TODO: check for leaks;
+// TODO: delete debug from lexer ;
 
 int		main(void)
 {
