@@ -30,6 +30,7 @@ std::pair<Vertex, Vertex> Lexer::regex_check(std::string str) const
 			;
 		else if (left.Node_type == "SW" && (right.Node_type == "SW" || right.Node_type == "CA" || right.Node_type == "RT"))
 			;
+		/* maybe to comment */
 		else if ((right.Node_type == "SW" && (left.Node_type == "SW" || left.Node_type == "CA" || left.Node_type == "RT")))
 			;
 		else
