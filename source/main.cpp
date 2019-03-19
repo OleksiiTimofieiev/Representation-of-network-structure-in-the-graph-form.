@@ -31,7 +31,7 @@ int		main(void)
 
 	core.main_cycle(); /* start of the main routine */
 
-	system("leaks -q infiniBand_network_graph");
+	system("leaks -q infiniBand_network_graph"); /* leaks detection */
 
 	return (0);
 }
