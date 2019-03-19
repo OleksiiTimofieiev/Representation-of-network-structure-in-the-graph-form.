@@ -18,11 +18,11 @@ int		main(void)
 	return (0);
 }
 
-// error management: 
+// error management:
 // explain logic in lines;
 // - not unique NodeGUID
 // - check if node exists;
-// - full confirmity with the line structure for every parameter
+// - full confirmity with the line structure for every parameter (error: CA-SW);
 // - SW -> CA, SW, RT || or other stuff;
 // - left in string type in order to save place;
 // - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
@@ -31,5 +31,3 @@ int		main(void)
 // - memory: for unix type systems;
 
 // edge + vertex
-// no leaks;
-// error: CA-SW
