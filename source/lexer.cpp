@@ -25,7 +25,18 @@ std::pair<Vertex, Vertex> Lexer::regex_check(std::string str) const
 
 		option = right_node;
 		Vertex right(result, option);
-		
+
+		if (left.Node_type == right.Node_type && (left.Node_type == "SW" && right.Node_type == "SW"))
+			;
+		else if (left.Node_type == "SW" && (right.Node_type == "SW" || right.Node_type == "CA" || right.Node_type == "RT"))
+			;
+		else if ((right.Node_type == "SW" && (left.Node_type == "SW" || left.Node_type == "CA" || left.Node_type == "RT")))
+			;
+		else
+		{
+			std::cout << RED << "line № " << RESET << line_number << " -> not valid input, according to regex" << std::endl;
+			return (std::make_pair(Vertex(), Vertex()));
+		}	
 		line_number++;
 
 		return (std::make_pair(left, right));

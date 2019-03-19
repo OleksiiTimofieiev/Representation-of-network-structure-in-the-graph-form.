@@ -25,7 +25,7 @@ int		main(void)
 // - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
 // - use of std::string for data saving; char *
 // - 924 => list
-// 793
+
 // edge + vertex
 // no leaks;
 // error: CA-SW
