@@ -1,6 +1,7 @@
 #include <fstream>
 
 #include "../includes/lexer.hpp"
+#include "../includes/parser.hpp"
 
 // TODO: ADT main class;
 // TODO: parser ;
@@ -41,6 +42,8 @@ void	print_node(const Vertex & vertex)
 int		main(void)
 {
 	Lexer lexer; /* class to parse and validate input */
+	Parser parser;
+	Database database;
 
 	std::string		input;
 	std::string 	path = "./test_file/opensm-subnet.lst";
@@ -69,13 +72,17 @@ int		main(void)
 			line_number++;
 
 			line = lexer.regex_check(input, &not_ok, line_number);
+			parser.parse(line, database);
 
-			print_node(line.first);
+			// print_node(line.first);
 
-			std::cout << "---------------------"  << std::endl;
+			// std::cout << "---------------------"  << std::endl;
 
-			print_node(line.second);
+			// print_node(line.second);
 
+			std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
+				std::cout << element.second.Node_GUID << std::endl;
+			});
 		}
 	}
 
