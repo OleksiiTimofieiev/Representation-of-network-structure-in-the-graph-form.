@@ -6,7 +6,7 @@
 #include <unordered_map>
 #include "colors.hpp"
 
-class 			Vertex;
+
 
 typedef enum 	vertex_option
 {
