@@ -42,12 +42,16 @@ void	Visualizer::show_node_reg_exp(const Database & database, const std::string 
 	auto 		hash = database.hash;
 	const 		std::regex regex_rule(regex);
 	std::smatch result;
+	bool		found = false;
 
 	for (auto & it : database.hash)
 	{
 		if (std::regex_match(it.second.Node_GUID, result, regex_rule))
+		{
+			found = true;
 			std::cout << it.second  << std::endl;
-		else
-			std::cout << MAGENTA << "Not found." << RESET << std::endl;
+		}
 	}
+	if (!found)
+		std::cout << MAGENTA << "Not found." << RESET << std::endl;
 }

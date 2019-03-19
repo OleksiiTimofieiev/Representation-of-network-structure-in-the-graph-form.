@@ -13,7 +13,7 @@ class Lexer
 	public:
 		Lexer(void);
 		~Lexer(void);
-		void 						correct_lines(Vertex &vertex);
+		
 		std::pair<Vertex, Vertex> 	regex_check(std::string str);
 };
 

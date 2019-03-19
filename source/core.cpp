@@ -70,7 +70,6 @@ void Core::console_input_handler(void)
 	func_option _func_option;
 	bool 		read_error = true;
 
-
 	while (42)
 	{
 
@@ -124,7 +123,6 @@ void Core::console_input_handler(void)
 
 void Core::main_cycle()
 {
-	// int lines = 0;
 	fin.open(path);
 
 	if (!fin.is_open())
@@ -140,24 +138,13 @@ void Core::main_cycle()
 		{
 			getline(fin, input);
 
-			// line_number++;
 			line = lexer.regex_check(input);
 
-			if (line.first.Node_type != "empty_str") // add validation func
+			if (line.first.Node_type != "empty_str")
 			{
-				// std::cout << "test" << std::endl;
-				// lines++;
-				// correct_lines(line.first);
-				// correct_lines(line.second);
-
 				parser.parse(line, database);
 			}
-			// std::cout << "---------------------"  << std::endl;
-			// print_node(line.second);
 		}
-		// std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
-		// 	std::cout << element.second.edges[0] << std::endl;
-		// });
 	}
 
 	fin.close();

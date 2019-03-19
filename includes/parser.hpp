@@ -6,13 +6,10 @@
 class Parser
 {
 	public:
-		Parser(/* args */);
+		Parser();
 		~Parser();
 
 		void	parse(const std::pair<Vertex, Vertex> &line, Database & database);
 };
-
-
-
 
 #endif

@@ -15,6 +15,10 @@ typedef enum 	vertex_option
 class 			Vertex
 {
 	public:
+		Vertex(void);
+		Vertex(const std::smatch & result, options_of_construction var);
+		~Vertex(void);
+
 		std::string 			Node_type;
 		std::string 			Number_of_ports;
 		std::string 			Node_GUID;
@@ -30,11 +34,7 @@ class 			Vertex
 		
 		std::unordered_map<std::string, Vertex> edges;
 
-		Vertex(void);
-		Vertex(const std::smatch &result, options_of_construction var);
-		~Vertex(void);
-		
-		friend std::ostream &operator<<(std::ostream &s, const Vertex &v);
+		friend std::ostream &operator<<(std::ostream & s, const Vertex & v);
 };
 
 #endif

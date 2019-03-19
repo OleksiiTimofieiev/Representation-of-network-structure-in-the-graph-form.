@@ -6,10 +6,10 @@
 
 class Database
 {
-public:
-	Database();
-	~Database();
-	
+	public:
+		Database();
+		~Database();
+
 	std::unordered_map<std::string, Vertex> hash;
 };
 

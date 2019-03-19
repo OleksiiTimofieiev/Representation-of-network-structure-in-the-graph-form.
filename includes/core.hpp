@@ -9,8 +9,6 @@
 #include "parser.hpp"
 #include "visualizer.hpp"
 
-
-
 typedef enum var {
 	SHOW_NODES_ALL = 0,
 	SHOW_NODE,
@@ -41,9 +39,9 @@ class Core
 
 		std::function<void(void)> 	funcs[4];
 
-		public: 
-			Core(const std::string path);
-			~Core						();
+	public: 
+		Core(const std::string path);
+		~Core						();
 		
 		void						main_cycle(void);
 };

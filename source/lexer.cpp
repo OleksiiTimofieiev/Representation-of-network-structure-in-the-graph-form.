@@ -18,26 +18,14 @@ std::pair<Vertex, Vertex> Lexer::regex_check(std::string str)
 	std::smatch 	result;
 	options_of_construction option;
 
-	// Vertex vertex_left;
-	// Vertex vertex_right;
-
 	if (std::regex_match(str, result, regex_rule))
 	{
-		// std::cout << "------ cool ------" << std::endl;
-		// int i = 0;
-
-		// for (std::smatch::iterator it = result.begin(); it != result.end(); ++it )
-		// {
-		// 	std::cout << i++ << " -> " << *it << std::endl;
-		// }
-
 		option = left_node;
 		Vertex left(result, option);
-		// this->correct_lines(left);
 
 		option = right_node;
 		Vertex right(result, option);
-		// this->correct_lines(right);
+		
 		line_number++;
 
 		return (std::make_pair(left, right));
@@ -45,6 +33,7 @@ std::pair<Vertex, Vertex> Lexer::regex_check(std::string str)
 	else
 	{
 		std::cout << RED << "line № " << RESET << line_number << " -> not valid input, according to regex" << std::endl;
+		
 		line_number++;
 
 		return (std::make_pair(Vertex(), Vertex()));
