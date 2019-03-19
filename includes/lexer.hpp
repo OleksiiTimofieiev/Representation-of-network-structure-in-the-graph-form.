@@ -9,12 +9,12 @@
 class Lexer
 {
 	private:
-		size_t	line_number;
+		mutable size_t	line_number;
 	public:
 		Lexer(void);
 		~Lexer(void);
 		
-		std::pair<Vertex, Vertex> 	regex_check(std::string str);
+		std::pair<Vertex, Vertex> 	regex_check(std::string str) const;
 };
 
 #endif
