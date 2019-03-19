@@ -4,17 +4,12 @@
 // TODO: explain data structure selection;
 // TODO: explain logic in lines;
 
-// TODO: handle errors with input;
-
-// -          show node neighbors <Node GUID>
-
-// printing all neighbors of the node including DWN ports as follows:
-
-// Local Port, Local Port GUID, Peer Port, Peer Port GUID, Link State
 
 // try catch for data types;
 // check for overlap (bigge value)
+
 // obligatory parameters for the input;
+// TODO: handle errors with input;
 
 int		main(void)
 {

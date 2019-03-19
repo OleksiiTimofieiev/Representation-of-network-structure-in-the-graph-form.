@@ -27,6 +27,7 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 	else
 	{
 		Node_type = result[12];
+
 		Number_of_ports = result[13];
 		Node_GUID = result[15];
 		Port_GUID = result[16];
@@ -37,18 +38,18 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 		DeviceID = result[18];
 		Revision = result[19];
 		Link_State = result[26];
-		Port = result[22];
+		Port = result[11];
 	}
 }
 
 std::ostream &operator<<(std::ostream &os, const Vertex &vertex)
 {
 	std::cout << YELLOW << "Node type        \x1b[35m-> " << GREEN << vertex.Node_type << RESET << std::endl;
-	std::cout << YELLOW << "Number of ports  \x1b[35m-> " << GREEN << vertex.Number_of_ports << RESET << std::endl;
-	std::cout << YELLOW << "Node GUID        \x1b[35m-> " << GREEN << vertex.Node_GUID << RESET << std::endl;
-	std::cout << YELLOW << "Port GUID        \x1b[35m-> " << GREEN << vertex.Port_GUID << RESET << std::endl;
+	std::cout << YELLOW << "Number of ports  \x1b[35m-> " << GREEN << &vertex.Number_of_ports[6] << RESET << std::endl;
+	std::cout << YELLOW << "Node GUID        \x1b[35m-> " << GREEN << "0x" << &vertex.Node_GUID[9] << RESET << std::endl;
+	std::cout << YELLOW << "Port GUID        \x1b[35m-> " << GREEN << "0x" << & vertex.Port_GUID[9] << RESET << std::endl;
 	std::cout << YELLOW << "Node description \x1b[35m-> " << GREEN << vertex.Node_description << RESET << std::endl;
-	std::cout << YELLOW << "LID              \x1b[35m-> " << GREEN << vertex.LID << RESET << std::endl;
+	std::cout << YELLOW << "LID              \x1b[35m-> " << GREEN << &vertex.LID[4] << RESET << std::endl;
 
 	return (os);
 };

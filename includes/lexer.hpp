@@ -11,8 +11,8 @@ class Lexer
 	public:
 		Lexer(void);
 		~Lexer(void);
-
-		std::pair<Vertex, Vertex> regex_check(std::string str);
+		void 						correct_lines( Vertex &vertex);
+		std::pair<Vertex, Vertex> 	regex_check(std::string str);
 };
 
 #endif

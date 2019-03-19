@@ -33,9 +33,11 @@ std::pair<Vertex,Vertex> Lexer::regex_check(std::string str)
 
 		option = left_node;
 		Vertex left(result, option);
+		// this->correct_lines(left);
 
 		option = right_node;
 		Vertex right(result, option);
+		// this->correct_lines(right);
 
 		return (std::make_pair(left, right));
 	}
