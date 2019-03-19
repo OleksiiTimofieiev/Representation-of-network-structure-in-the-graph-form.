@@ -3,10 +3,7 @@
 
 #include "../includes/lexer.hpp"
 
-
-// TODO: lexer;
 // TODO: parser;
-
 
 
 int		main(void)
