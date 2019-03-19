@@ -14,6 +14,7 @@ Core::~Core(){}
 
 void Core::menu(void) const
 {
+	std::cout << "\x1b[36mPlease, select an option:[0 - 4] \x1B[0m" << std::endl;
 	std::cout << "\x1b[32m0.\x1b[0m show nodes all;" << std::endl;
 	std::cout << "\x1b[32m1.\x1b[0m show node;" << std::endl;
 	std::cout << "\x1b[32m2.\x1b[0m show node neighbors;" << std::endl;
@@ -72,22 +73,21 @@ void Core::console_input_handler(void)
 
 	while (42)
 	{
-		std::cout << "\x1b[36mPlease, select an option:[0 - 4] \x1B[0m" << std::endl;
 		this->menu();
 
 		if (std::getline(std::cin, input))
 		{
 			if (input == "4")
 				break;
-			// else if (input != "0" || input != "1" || input != "2" || input != "3")
-			// {
-			// 	std::cout << "selected -> " << input << std::endl;
-			// 	std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
+			else if (input != "0" && input != "1" && input != "2" && input != "3")
+			{
+				std::cout << "selected -> " << input << std::endl;
+				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
+				
+				this->menu();
 
-			// 	this->menu();
-
-			// 	continue;
-			// }
+				continue;
+			}
 
 			if (input == "0")
 				_func_option = SHOW_NODES_ALL;
@@ -99,8 +99,14 @@ void Core::console_input_handler(void)
 				_func_option = SHOW_NODE_REG_EXP;
 
 			this->f[_func_option]();
-			
-			continue;
+
+			std::cout << "\x1b[33mDo you want to continue ? y / n \x1B[0m" << std::endl;
+			std::getline(std::cin, input);
+
+			if (input == "y")
+				continue;
+			else
+				break ;
 		};
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
