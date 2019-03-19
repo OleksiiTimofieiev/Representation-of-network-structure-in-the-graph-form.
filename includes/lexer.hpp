@@ -12,7 +12,7 @@ class Lexer
 		Lexer(void);
 		~Lexer(void);
 
-		std::pair<Vertex, Vertex> regex_check(std::string str, int *not_ok, int line_number);
+		std::pair<Vertex, Vertex> regex_check(std::string str);
 };
 
 #endif

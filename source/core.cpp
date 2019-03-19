@@ -5,7 +5,7 @@ Core::~Core(){}
 
 void Core::main_cycle()
 {
-	int lines = 0;
+	// int lines = 0;
 	fin.open(path);
 
 	if (!fin.is_open())
@@ -19,14 +19,14 @@ void Core::main_cycle()
 		{
 			getline(fin, input);
 
-			line_number++;
+			// line_number++;
 
-			line = lexer.regex_check(input, &not_ok, line_number);
+			line = lexer.regex_check(input);
 
 			if (line.first.Node_type != "empty_str") // add validation func
 			{
 				// std::cout << "test" << std::endl;
-				lines++;
+				// lines++;
 				parser.parse(line, database);
 			}
 
@@ -39,8 +39,8 @@ void Core::main_cycle()
 		// });
 	}
 
-	std::cout << "total not valid lines -> " << not_ok << std::endl;
-	std::cout << "total lines 			-> " << lines << std::endl;
+	// std::cout << "total not valid lines -> " << not_ok << std::endl;
+	// std::cout << "total lines 			-> " << lines << std::endl;
 
 	// for (const auto & pair : database.hash)
 	// {

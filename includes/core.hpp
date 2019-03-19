@@ -20,10 +20,6 @@ class Core
 		std::string 				path; /* path to the file for reading purposes */
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
-
-		int line_number = 0; //TODO: remove
-		int not_ok = 0;		 //TODO: remove
-
 	  public:
 		Core(const std::string path);
 		~Core();
