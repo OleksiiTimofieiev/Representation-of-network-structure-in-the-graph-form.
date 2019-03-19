@@ -36,34 +36,19 @@ void Core::main_cycle()
 		// std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
 		// 	std::cout << element.second.edges[0] << std::endl;
 		// });
-}
+	}
 
-std::cout << "total not valid lines -> " << not_ok << std::endl;
+	std::cout << "total not valid lines -> " << not_ok << std::endl;
 
-// for (const auto & pair : database.hash)
-// {
-// 	std::cout << pair.second.Node_GUID << '\n';
-// }
+	// for (const auto & pair : database.hash)
+	// {
+	// 	std::cout << pair.second.Node_GUID << '\n';
+	// }
 
-std::string str = "NodeGUID:248a0703005ed970";
+	// std::string str = "NodeGUID:248a0703005ed970";
 
-// std::cout << database.hash[str].Node_type << std::endl;
+	// visualizer.show_nodes_all(database);
+	visualizer.show_node("NodeGUID:7cfe900300f21aa0");
 
-// size_t len = database.hash[str].edges.size();
-
-// for(size_t i = 0; i < len; i++)
-// 	std::cout << database.hash[str].edges[i] << std::endl;
-
-// std::for_each(database.hash.begin(), database.hash.end(), [](std::pair<std::string, Vertex> element) {
-// 	std::cout << element.second.edges[0] << std::endl;
-// });
-
-for (auto &it : database.hash[str].edges)
-{
-	// Do stuff
-	std::cout << it.first << std::endl;
-}
-
-fin.close();
-
+		fin.close();
 }

@@ -30,6 +30,8 @@ class 			Vertex // uses
 	  	Vertex(void);
 		Vertex(const std::smatch &result, options_of_construction var);
 		~Vertex(void);
+		
+		friend std::ostream &operator<<(std::ostream &s, const Vertex &v);
 };
 
 #endif
