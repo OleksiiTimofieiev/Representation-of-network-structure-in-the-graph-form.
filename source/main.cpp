@@ -104,9 +104,7 @@ int		main(void)
 	size_t len = database.hash[str].edges.size();
 
 	for(size_t i = 0; i < len; i++)
-	{
 		std::cout << database.hash[str].edges[i] << std::endl;
-	}
 	
 
 			  fin.close();
