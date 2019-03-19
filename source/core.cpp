@@ -79,7 +79,6 @@ void Core::console_input_handler(void)
 				break;
 			else if (input != "0" && input != "1" && input != "2" && input != "3")
 			{
-				std::cout << "selected -> " << input << std::endl;
 				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
 				
 				this->menu();
@@ -104,7 +103,7 @@ void Core::console_input_handler(void)
 			{
 				if (input == "y")
 					continue;
-				else
+				else if (input == "n")
 					break ;
 			}
 			else
