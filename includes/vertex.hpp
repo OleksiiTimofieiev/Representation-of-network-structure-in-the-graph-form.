@@ -30,11 +30,12 @@ class 			Vertex
 		std::string 			Link_State;
 		std::string				Port;
 
+		std::unordered_map<std::string, Vertex> edges;
+		
 		Vertex(void);
 		Vertex(const std::smatch & result, options_of_construction var);
 		~Vertex(void);
 
-		std::unordered_map<std::string, Vertex> edges;
 
 		friend std::ostream &operator<<(std::ostream & s, const Vertex & v);
 };
