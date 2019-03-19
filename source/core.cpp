@@ -11,7 +11,6 @@ void Core::console_input_handler(void)
 
 		if (std::getline(std::cin, input))
 		{
-
 			if (input == "4")
 				break;
 			else if (input == "0")
@@ -51,7 +50,6 @@ void Core::console_input_handler(void)
 				std::cout << "selected -> " << input << std::endl;
 				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
 			}
-			
 		};
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
