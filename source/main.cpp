@@ -2,9 +2,9 @@
 #include <fstream>
 #include <regex>
 
-void	regex_check(std::string str) 
+void	regex_check(std::string str, int *not_ok) 
 {
-	const std::regex regex_rule("\\{ (CA|SW) (Ports:[0-9]+) (SystemGUID:[A-Za-z0-9]+) (NodeGUID:[A-Za-z0-9]+) (PortGUID:[A-Za-z0-9]+) (VenID:[A-Za-z0-9]+) (DevID:[A-Za-z0-9]+) (Rev:[A-Za-z0-9]+) (\\{ime5 HCA-1\\}) (LID:[A-Za-z0-9]+) (PN:01) \\} \\{ (SW) (Ports:25) (SystemGUID:7cfe900300992080) (NodeGUID:7cfe900300f2da60) (PortGUID:7cfe900300f2da60) (VenID:000002C9) (DevID:CF080000) (Rev:000000A0) (\\{MF0;cs7500:CS7500/L17/U2\\}) (LID:00F9) (PN:0C) \\} (PHY=4x) (LOG=ACT) (SPD=25)");
+	const std::regex regex_rule("\\{ (CA|SW|RT) (Ports:[0-9]+) (SystemGUID:[A-Za-z0-9]+) (NodeGUID:[A-Za-z0-9]+) (PortGUID:[A-Za-z0-9]+) (VenID:[A-Za-z0-9]+) (DevID:[A-Za-z0-9]+) (Rev:[A-Za-z0-9]+) (\\{.+?\\}) (LID:[A-Za-z0-9]+) (PN:[A-Za-z0-9]+) \\} \\{ (CA|SW|RT) (Ports:[0-9]+) (SystemGUID:[A-Za-z0-9]+) (NodeGUID:[A-Za-z0-9]+) (PortGUID:[A-Za-z0-9]+) (VenID:[A-Za-z0-9]+) (DevID:[A-Za-z0-9]+) (Rev:[A-Za-z0-9]+) (\\{.+?\\}) (LID:[A-Za-z0-9]+) (PN:[A-Za-z0-9]+) \\} (PHY=(1x|2x|4x)) (LOG=(DWN|INIT|ARM|ACT)) (SPD=(5|10|20|14|25))");
 
 	std::smatch result;
 
@@ -18,6 +18,7 @@ void	regex_check(std::string str)
 	}
 	else
 	{
+		(*not_ok)++;
 		std::cout << "****** not cool ******" << std::endl;
 	}
 
@@ -34,7 +35,7 @@ int		main(void)
 	int line_number = 0;
 
 	// int ok = 0;
-	// int not_ok = 0;
+	int not_ok = 0;
 
 	fin.open(path);
 
@@ -51,10 +52,10 @@ int		main(void)
 			line_number++;
 
 			std::cout << line_number << " -> ";
-			regex_check(input);
-			// std::cout << input << std::endl;
+			regex_check(input, &not_ok);
 		}
 	}
+			std::cout << not_ok << std::endl;
 	fin.close();
 
 	return (0);
