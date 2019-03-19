@@ -1,13 +1,14 @@
 #include "../includes/core.hpp"
 
 // TODO: explain logic in lines;
+// TODO: no such node;
+// TODO: show error om line while lexer works; => Lexer && Parser Started;
+// TODO: type conversion;
+// TODO: validation: SW -> CA, SW, RT;
 
 
 // try catch for data types;
 // check for overlap (big value)
-
-// obligatory parameters for the input;
-// TODO: handle errors with input;
 
 int		main(void)
 {
@@ -27,3 +28,8 @@ int		main(void)
 // - left in string type in order to save place;
 // - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
 // - use of std::string for data saving; char *
+// - 924 => list
+// 793
+// edge + vertex
+// no leaks;
+// error: CA-SW

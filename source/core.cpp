@@ -125,12 +125,13 @@ void Core::main_cycle()
 	}
 	else
 	{
+		std::cout << "\n";
+		std::cout << GREEN << "Lexer && Parser running ...\n\n" << RESET;
 		while (!(fin.eof()))
 		{
 			getline(fin, input);
 
 			// line_number++;
-
 			line = lexer.regex_check(input);
 
 			if (line.first.Node_type != "empty_str") // add validation func
@@ -149,26 +150,10 @@ void Core::main_cycle()
 		// 	std::cout << element.second.edges[0] << std::endl;
 		// });
 	}
+	
 	fin.close();
 
+	std::cout << std::endl;
+
 	this->console_input_handler();
-
-	// std::cout << "total not valid lines -> " << not_ok << std::endl;
-	// std::cout << "total lines 			-> " << lines << std::endl;
-
-	// for (const auto & pair : database.hash)
-	// {
-	// 	std::cout << pair.second.Node_GUID << '\n';
-	// }
-
-	// std::string str = "NodeGUID:248a0703005ed970";
-
-
-	/* testing */
-
-	// visualizer.show_nodes_all(database);
-	// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
-	// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
-	// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
-
 }
