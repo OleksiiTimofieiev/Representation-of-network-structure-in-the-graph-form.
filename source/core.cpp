@@ -65,7 +65,7 @@ void Core::main_cycle()
 	/* testing */
 
 	// visualizer.show_nodes_all(database);
-	visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
+	// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
 	// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
 	// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 

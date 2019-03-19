@@ -1,7 +1,5 @@
 #include "../includes/core.hpp"
 
-// TODO: explain error management;
-// TODO: explain data structure selection;
 // TODO: explain logic in lines;
 
 
@@ -26,3 +24,6 @@ int		main(void)
 
 // - not unique NodeGUID
 // - full confirmity with the line structure for every parameter
+// - left in string type in order to save place;
+// - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
+// 
