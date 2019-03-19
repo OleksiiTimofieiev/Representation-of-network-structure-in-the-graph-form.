@@ -5,6 +5,8 @@ Core::~Core(){}
 
 void Core::console_input_handler(void)
 {
+	std::string base("NodeGUID:");
+
 	while (42)
 	{
 		std::cout << "\x1b[36mPlease, select an option:[0 - 3] \x1B[0m" << std::endl;
@@ -17,25 +19,20 @@ void Core::console_input_handler(void)
 			if (input == "0")
 			{
 				visualizer.show_nodes_all(database);
-				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
-				// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
-				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
 				continue ;
 			}
 			else if (input == "1")
 			{
-				// visualizer.show_nodes_all(database);
-				visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
-				// visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
-				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
+				std::string input_buf = base + "7cfe900300f21aa0";
+
+				visualizer.show_node(database, input_buf);
 				continue ;
 			}
 			else if (input == "2")
 			{
-				// visualizer.show_nodes_all(database);
-				// visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
-				visualizer.show_node_neighbors(database, "NodeGUID:7cfe9003004b0700");
-				// visualizer.show_node_reg_exp(database, "NodeGUID:[A-Za-z0-9]+" /*, "(NodeGUID:[A-Za-z0-9]+)"*/);
+				std::string input_buf = base + "7cfe900300f21aa0";
+
+				visualizer.show_node_neighbors(database, input_buf);
 				continue;
 			}
 			else if (input == "3")

@@ -27,7 +27,6 @@ Vertex::Vertex(const std::smatch &result, options_of_construction var)
 	else
 	{
 		Node_type = result[12];
-
 		Number_of_ports = result[13];
 		Node_GUID = result[15];
 		Port_GUID = result[16];

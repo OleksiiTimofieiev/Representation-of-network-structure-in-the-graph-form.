@@ -21,7 +21,8 @@ class Core
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
 		void 	console_input_handler(void);
-	public : Core(const std::string path);
+	public: 
+		Core(const std::string path);
 		~Core();
 		
 		void	main_cycle(void);
