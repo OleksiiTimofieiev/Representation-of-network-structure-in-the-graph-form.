@@ -14,7 +14,7 @@ class Lexer
 		Lexer(void);
 		~Lexer(void);
 		
-		std::pair<Vertex, Vertex> 	regex_check(std::string str) const;
+		std::pair<Vertex, Vertex> regex_check(std::string str) const;
 };
 
 #endif
