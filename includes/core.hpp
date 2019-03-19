@@ -21,10 +21,10 @@ class Core
 
 		std::pair<Vertex, Vertex>	line; /* buffer container for the line read */
 
-		int line_number = 0;
-		int not_ok = 0;
+		int line_number = 0; //TODO: remove
+		int not_ok = 0;		 //TODO: remove
 
-	public:
+	  public:
 		Core(const std::string path);
 		~Core();
 		void	main_cycle(void);
