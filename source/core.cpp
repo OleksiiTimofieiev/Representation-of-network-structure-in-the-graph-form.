@@ -68,11 +68,14 @@ void Core::console_input_handler(void)
 {
 	std::string base("NodeGUID:");
 	func_option _func_option;
+	bool 		read_error = true;
 
-	this->menu();
 
 	while (42)
 	{
+
+		if (read_error)
+			this->menu();
 
 		if (std::getline(std::cin, input))
 		{
@@ -82,10 +85,13 @@ void Core::console_input_handler(void)
 			{
 				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
 				
+				read_error = false;
 				this->menu();
 
 				continue ;
 			}
+
+			read_error = true;
 
 			if (input == "0")
 				_func_option = SHOW_NODES_ALL;
@@ -98,14 +104,16 @@ void Core::console_input_handler(void)
 
 			funcs[_func_option]();
 
-			std::cout << "\u001b[36;1mDo you want to continue ? y / n \x1B[0m" << std::endl;
+			std::cout << "\u001b[36;1mDo you want to continue ? + / - \x1B[0m" << std::endl;
 
 			if (std::getline(std::cin, input))
 			{
-				if (input == "y")
+				if (input == "+")
 					continue;
-				else if (input == "n")
+				else if (input == "-")
 					break ;
+				else
+					std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
 			}
 		}
 		else 

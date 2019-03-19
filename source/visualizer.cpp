@@ -47,5 +47,7 @@ void	Visualizer::show_node_reg_exp(const Database & database, const std::string 
 	{
 		if (std::regex_match(it.second.Node_GUID, result, regex_rule))
 			std::cout << it.second  << std::endl;
+		else
+			std::cout << MAGENTA << "Not found." << RESET << std::endl;
 	}
 }
