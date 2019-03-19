@@ -97,11 +97,19 @@ int		main(void)
 	// 	std::cout << pair.second.Node_GUID << '\n';
 	// }
 
-	std::string str = "NodeGUID:248a0703005c9fa0";
+	std::string str = "NodeGUID:7cfe900300f21a00";
 
 	std::cout << database.hash[str].Node_type << std::endl;
 
-	fin.close();
+	size_t len = database.hash[str].edges.size();
+
+	for(size_t i = 0; i < len; i++)
+	{
+		std::cout << database.hash[str].edges[i] << std::endl;
+	}
+	
+
+			  fin.close();
 
 	system("leaks -q graph");
 
