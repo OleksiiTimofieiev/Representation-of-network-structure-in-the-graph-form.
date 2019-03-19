@@ -5,11 +5,11 @@ Core::~Core(){}
 
 void Core::menu(void)
 {
-	std::cout << "0. show nodes all;" << std::endl;
-	std::cout << "1. show node;" << std::endl;
-	std::cout << "2. show node neighbors;" << std::endl;
-	std::cout << "3. show node reg exp;" << std::endl;
-	std::cout << "4. terminate the program;" << std::endl;
+	std::cout << "\x1b[32m0.\x1b[0m show nodes all;" << std::endl;
+	std::cout << "\x1b[32m1.\x1b[0m show node;" << std::endl;
+	std::cout << "\x1b[32m2.\x1b[0m show node neighbors;" << std::endl;
+	std::cout << "\x1b[32m3.\x1b[0m show node reg exp;" << std::endl;
+	std::cout << "\x1b[32m4.\x1b[0m terminate the program;" << std::endl;
 }
 
 void Core::console_input_handler(void)
@@ -18,7 +18,7 @@ void Core::console_input_handler(void)
 
 	while (42)
 	{
-		std::cout << "\x1b[36mPlease, select an option:[0 - 3] \x1B[0m" << std::endl;
+		std::cout << "\x1b[36mPlease, select an option:[0 - 4] \x1B[0m" << std::endl;
 		this->menu();
 
 		if (std::getline(std::cin, input))
@@ -54,6 +54,8 @@ void Core::console_input_handler(void)
 			{
 				std::cout << "selected -> " << input << std::endl;
 				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
+				this->menu();
+				continue ;
 			}
 		};
 	}
