@@ -44,7 +44,7 @@ std::pair<Vertex, Vertex> Lexer::regex_check(std::string str)
 	}
 	else
 	{
-		std::cout << "line -> " << line_number << "not valid input according to regex" << std::endl;
+		std::cout << RED << "line № " << RESET << line_number << " -> not valid input, according to regex" << std::endl;
 		line_number++;
 
 		return (std::make_pair(Vertex(), Vertex()));

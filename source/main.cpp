@@ -2,10 +2,9 @@
 
 // TODO: explain logic in lines;
 // TODO: no such node;
-// TODO: show error om line while lexer works; => Lexer && Parser Started;
 // TODO: type conversion;
 // TODO: validation: SW -> CA, SW, RT;
-
+// TODO: check all classes for the comments;
 
 // try catch for data types;
 // check for overlap (big value)

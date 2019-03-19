@@ -11,7 +11,8 @@ Core::~Core(){}
 
 void Core::menu(void) const
 {
-	std::cout << "\x1b[36mPlease, select an option:[0 - 4] \x1B[0m" << std::endl;
+	std::cout << "\x1b[36mPlease, select an option:[0 - 4] \x1B[0m" << std::endl
+			  << std::endl;
 	std::cout << "\x1b[32m0.\x1b[0m show nodes all;" << std::endl;
 	std::cout << "\x1b[32m1.\x1b[0m show node;" << std::endl;
 	std::cout << "\x1b[32m2.\x1b[0m show node neighbors;" << std::endl;
@@ -150,7 +151,7 @@ void Core::main_cycle()
 		// 	std::cout << element.second.edges[0] << std::endl;
 		// });
 	}
-	
+
 	fin.close();
 
 	std::cout << std::endl;
