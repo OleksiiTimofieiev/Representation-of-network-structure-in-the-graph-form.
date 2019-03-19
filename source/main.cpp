@@ -23,7 +23,7 @@ int		main(void)
 // - not unique NodeGUID
 // - check if node exists;
 // - full confirmity with the line structure for every parameter (error: CA-SW);
-// - SW -> CA, SW, RT || or other stuff;
+// - SW -> CA, SW, RT || or other stuff -> line 33;
 // - left in string type in order to save place;
 // - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
 // - use of std::string for data saving; char *
