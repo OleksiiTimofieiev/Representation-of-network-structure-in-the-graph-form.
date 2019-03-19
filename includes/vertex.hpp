@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <regex>
+#include <unordered_map>
 
 typedef enum 	vertex_option
 {
@@ -24,7 +25,7 @@ class 			Vertex // uses
 		std::string 			DeviceID;
 		std::string 			Revision;
 		std::string 			Link_State;
-		std::vector<std::string> edges;
+		std::unordered_map<std::string, std::string> edges;
 
 	  	Vertex(void);
 		Vertex(const std::smatch &result, options_of_construction var);
