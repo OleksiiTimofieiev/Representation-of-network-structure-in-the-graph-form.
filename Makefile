@@ -1,5 +1,5 @@
 NAME		=	infiniBand_network_graph
-FLAGS		= 	-Wall -Werror -Wextra
+FLAGS		= 	
 COMPILER	=	g++ -std=c++11
 
 DIR_INC		=	./includes/
