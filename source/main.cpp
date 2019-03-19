@@ -6,7 +6,7 @@
 
 
 // try catch for data types;
-// check for overlap (bigge value)
+// check for overlap (big value)
 
 // obligatory parameters for the input;
 // TODO: handle errors with input;
@@ -21,3 +21,8 @@ int		main(void)
 
 	return (0);
 }
+
+// error management: 
+
+// - not unique NodeGUID
+// - full confirmity with the line structure for every parameter
