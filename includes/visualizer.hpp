@@ -12,7 +12,7 @@ public:
 	~Visualizer();
 
 	void	show_nodes_all(const Database & database) const;
-	void 	show_node(const Database &database) const;
+	void 	show_node(const Database &database, const std::string str) const;
 };
 
 #endif

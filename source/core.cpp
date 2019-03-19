@@ -48,7 +48,7 @@ void Core::main_cycle()
 	// std::string str = "NodeGUID:248a0703005ed970";
 
 	// visualizer.show_nodes_all(database);
-	visualizer.show_node("NodeGUID:7cfe900300f21aa0");
+	visualizer.show_node(database, "NodeGUID:7cfe900300f21aa0");
 
 		fin.close();
 }
