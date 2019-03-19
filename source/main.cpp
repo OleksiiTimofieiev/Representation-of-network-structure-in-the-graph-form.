@@ -2,11 +2,11 @@
 
 #include "../includes/lexer.hpp"
 
-// TODO: operand class;
+// TODO: ADT main class;
 // TODO: parser ;
 // TODO: change the name of the binary file ;
 // TODO: check for leaks;
-// TODO: delete debug from lexer ;
+// TODO: delete debug variables from lexer ;
 // TODO: explain error manager;
 // TODO: explain data structure selection;
 // TODO: handle errors with input;
@@ -16,7 +16,7 @@
 // unordered_map;
 // try catch for data types;
 // check for overlap (bigge value)
-// obligatory prameters;
+// obligatory parameters;
 // not unique inode
 // add to the both vertices
 // if do not exists, add to edges;
