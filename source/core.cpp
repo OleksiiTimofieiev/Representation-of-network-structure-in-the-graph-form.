@@ -9,12 +9,28 @@ void Core::console_input_handler(void)
 
 	while (reading)
 	{
+		std::cout << "\x1b[36mPlease, select an option:\x1B[0m" << std::endl << std::endl;
+
 		if (std::getline(std::cin, input))
 		{
-			
+			std::cout << "selected -> " << input << std::endl;
+
 
 			if (input == "4")
 				break;
+			else if (input == "1")
+			{
+				// std::cout << "\x1b[36mPlease, select correct option.\x1B[0m" << std::endl << std::endl;
+				continue ;
+			}
+			else if (input == "2")
+			{
+				continue ;
+			}
+			else if (input == "3")
+			{
+				continue;
+			}
 		};
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
