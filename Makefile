@@ -10,11 +10,13 @@ DIR_OBJ		= 	./obj/
 
 HPP			=	lexer.hpp \
 				parser.hpp \
+				vertex.hpp \
 
 #-------------------------- Source files -------------------------------------------
 
 SRC			=	main.cpp \
 				lexer.cpp \
+				vertex.cpp \
 				# parser.cpp \
 
 INC_PATH 	= 	$(addprefix $(DIR_INC), $(HPP))
