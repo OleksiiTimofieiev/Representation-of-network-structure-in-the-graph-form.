@@ -2,7 +2,7 @@
 #include <fstream>
 #include <regex>
 
-void	regex_check(std::string str, int *not_ok) 
+void	regex_check(std::string str, int *not_ok, int line_number) 
 {
 	const std::regex regex_rule("^\\{ (CA|SW|RT) (Ports:[0-9]+) (SystemGUID:[A-Za-z0-9]+) (NodeGUID:[A-Za-z0-9]+) (PortGUID:[A-Za-z0-9]+) (VenID:[A-Za-z0-9]+) (DevID:[A-Za-z0-9]+) (Rev:[A-Za-z0-9]+) (\\{.+?\\}) (LID:[A-Za-z0-9]+) (PN:[A-Za-z0-9]+) \\} \\{ (CA|SW|RT) (Ports:[0-9]+) (SystemGUID:[A-Za-z0-9]+) (NodeGUID:[A-Za-z0-9]+) (PortGUID:[A-Za-z0-9]+) (VenID:[A-Za-z0-9]+) (DevID:[A-Za-z0-9]+) (Rev:[A-Za-z0-9]+) (\\{.+?\\}) (LID:[A-Za-z0-9]+) (PN:[A-Za-z0-9]+) \\} (PHY=(1x|2x|4x)) (LOG=(DWN|INIT|ARM|ACT)) (SPD=(5|10|20|14|25))$");
 
@@ -19,9 +19,7 @@ void	regex_check(std::string str, int *not_ok)
 	else
 	{
 		(*not_ok)++;
-		int tmp = (*not_ok) - 1;
-		std::cout << str << std::endl;
-		std::cout << "line -> " << tmp << "****** not cool ******" << std::endl;
+		std::cout << "line -> " << line_number << " ****** not cool ******" << std::endl;
 	}
 
 
@@ -54,10 +52,10 @@ int		main(void)
 			line_number++;
 
 			// std::cout << line_number << " -> ";
-			regex_check(input, &not_ok);
+			regex_check(input, &not_ok, line_number);
 		}
 	}
-			std::cout << not_ok << std::endl;
+			std::cout << "total not valid lines -> " << not_ok << std::endl;
 	fin.close();
 
 	return (0);
