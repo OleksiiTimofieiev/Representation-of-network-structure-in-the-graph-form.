@@ -5,9 +5,7 @@ Core::~Core(){}
 
 void Core::console_input_handler(void)
 {
-	bool reading = true;
-
-	while (reading)
+	while (42)
 	{
 		std::cout << "\x1b[36mPlease, select an option:\x1B[0m" << std::endl << std::endl;
 
