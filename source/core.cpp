@@ -69,9 +69,10 @@ void Core::console_input_handler(void)
 	std::string base("NodeGUID:");
 	func_option _func_option;
 
+	this->menu();
+	
 	while (42)
 	{
-		this->menu();
 
 		if (std::getline(std::cin, input))
 		{
@@ -81,9 +82,10 @@ void Core::console_input_handler(void)
 			{
 				std::cout << "\x1b[33mPlease, select correct option.\x1B[0m" << std::endl;
 				
+				
 				this->menu();
 
-				continue;
+				continue ;
 			}
 
 			if (input == "0")
@@ -106,9 +108,9 @@ void Core::console_input_handler(void)
 				else if (input == "n")
 					break ;
 			}
-			else
-				break ;
-		};
+		}
+		else 
+			break ;
 	}
 	std::cout << "\x1B[35mThank you for using the program.\x1B[0m" << std::endl;
 }
