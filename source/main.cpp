@@ -10,23 +10,8 @@ int		main(void)
 
 	core.main_cycle(); /* start of the main routine */
 
-	#if defined(__unix__) || defined(__unix) || \
-		(defined(__APPLE__) && defined(__MACH__))
-			system("leaks -q infiniBand_network_graph"); /* leaks detection */
-	#endif
-
 	return (0);
 }
 
-// error management:
-
-// - check if node exists in edges -> use std::map;
 
 // - left in string type in order to save place;
-// - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
-// - use of std::string for data saving; char *
-// - 924 => list
-// - memory: for unix type systems;
-
-// - explain logic in lines;
-// edge + vertex
