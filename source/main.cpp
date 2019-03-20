@@ -19,9 +19,9 @@ int		main(void)
 }
 
 // error management:
-// - not unique NodeGUID
-// - check if node exists;
-// - SW -> CA, SW, RT || or other stuff -> line 33;
+
+// - check if node exists in edges -> use std::map;
+
 // - left in string type in order to save place;
 // - unordered map -> 0(1) for insert, find, delete, do not adds the items which are already in the container;
 // - use of std::string for data saving; char *
