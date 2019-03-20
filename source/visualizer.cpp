@@ -31,16 +31,21 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 
 	if (size > 0)
 	{
-		std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
-			
-			auto vertex = database.hash;
+		for (auto & it : edges)
+		{
+			// std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
+				// auto vertex = database.hash;
 
-			std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &vertex[str].Port[3] << RESET << std::endl;
-			std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &vertex[str].Port_GUID[9] << RESET << std::endl;
-			std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &element.second.Port[3] << RESET << std::endl;
-			std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &element.second.Port_GUID[9] << RESET << std::endl;
-			std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << element.second.Link_State << RESET << std::endl << std::endl;
-		});
+				std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &it.Port[3] << RESET << std::endl;
+				std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &it.Port_GUID[9] << RESET << std::endl;
+
+				std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &hash[str].Port[3] << RESET << std::endl;
+				std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &hash[str].Port_GUID[9] << RESET << std::endl;
+
+				std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << it.Link_State << RESET << std::endl
+						  << std::endl;
+			// });
+		}
 	}
 	else
 		std::cout << MAGENTA << "Node not found." << RESET << std::endl;

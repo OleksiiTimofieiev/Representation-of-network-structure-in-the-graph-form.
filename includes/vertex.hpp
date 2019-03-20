@@ -5,6 +5,8 @@
 #include <regex>
 #include <unordered_map>
 #include "colors.hpp"
+#include <list>
+
 
 typedef enum 	vertex_option
 {
@@ -28,12 +30,11 @@ class 			Vertex
 		std::string 			Link_State;
 		std::string				Port;
 
-		std::unordered_map<std::string, Vertex> edges;
-		
+		std::list<Vertex> edges;
+
 		Vertex(void);
 		Vertex(const std::smatch & result, options_of_construction var);
 		~Vertex(void);
-
 
 		friend std::ostream &operator<<(std::ostream & s, const Vertex & v);
 };
