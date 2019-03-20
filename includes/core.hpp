@@ -41,7 +41,7 @@ class Core
 		std::function<void(void)> 	funcs[4];
 
 	public: 
-		Core(const std::string path);
+		Core						(const std::string path);
 		~Core						();
 		
 		void						main_cycle(void);
