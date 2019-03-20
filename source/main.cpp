@@ -19,7 +19,6 @@ int		main(void)
 }
 
 // error management:
-// explain logic in lines;
 // - not unique NodeGUID
 // - check if node exists;
 // - full confirmity with the line structure for every parameter (error: CA-SW);
@@ -30,4 +29,5 @@ int		main(void)
 // - 924 => list
 // - memory: for unix type systems;
 
+// - explain logic in lines;
 // edge + vertex
