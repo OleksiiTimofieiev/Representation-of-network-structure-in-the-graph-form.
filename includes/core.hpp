@@ -10,7 +10,8 @@
 #include "visualizer.hpp"
 #include "vertex.hpp"
 
-typedef enum var {
+typedef enum var 
+{
 	SHOW_NODES_ALL = 0,
 	SHOW_NODE,
 	SHOW_NODE_NEIGHBOURS,
