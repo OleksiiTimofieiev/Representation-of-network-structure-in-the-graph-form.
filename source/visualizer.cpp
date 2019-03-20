@@ -1,7 +1,6 @@
 #include "../includes/visualizer.hpp"
 
 Visualizer::Visualizer() {}
-
 Visualizer::~Visualizer() {}
 
 void	Visualizer::show_nodes_all(const Database & database) const
@@ -33,18 +32,14 @@ void	Visualizer::show_node_neighbors(const Database & database, const std::strin
 	{
 		for (auto & it : edges)
 		{
-			// std::for_each(edges.begin(), edges.end(), [&database, str](std::pair<std::string, Vertex> element) {
-				// auto vertex = database.hash;
+			std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &it.Port[3] << RESET << std::endl;
+			std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &it.Port_GUID[9] << RESET << std::endl;
 
-				std::cout << YELLOW << "Local_Port       \x1b[35m-> " << GREEN << &it.Port[3] << RESET << std::endl;
-				std::cout << YELLOW << "Local_Port_GUID  \x1b[35m-> " << GREEN << "0x" << &it.Port_GUID[9] << RESET << std::endl;
+			std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &hash[str].Port[3] << RESET << std::endl;
+			std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &hash[str].Port_GUID[9] << RESET << std::endl;
 
-				std::cout << YELLOW << "Peer_Port        \x1b[35m-> " << GREEN << &hash[str].Port[3] << RESET << std::endl;
-				std::cout << YELLOW << "Peer_Port_GUID   \x1b[35m-> " << GREEN << "0x" << &hash[str].Port_GUID[9] << RESET << std::endl;
-
-				std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << it.Link_State << RESET << std::endl
-						  << std::endl;
-			// });
+			std::cout << YELLOW << "Link_State       \x1b[35m-> " << GREEN << it.Link_State << RESET << std::endl
+						<< std::endl;
 		}
 	}
 	else

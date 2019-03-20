@@ -7,7 +7,7 @@ Core::Core(const std::string var) : path(var)
 	funcs[2] = [&] (void) { show_node_neighbors(); };
 	funcs[3] = [&] (void) { show_node_reg_exp(); };
 }
-Core::~Core(){}
+Core::~Core() {}
 
 void Core::menu(void) const
 {
@@ -72,7 +72,6 @@ void Core::console_input_handler(void)
 
 	while (42)
 	{
-
 		if (read_error)
 			this->menu();
 

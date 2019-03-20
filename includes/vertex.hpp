@@ -7,7 +7,6 @@
 #include "colors.hpp"
 #include <list>
 
-
 typedef enum 	vertex_option
 {
 	left_node = 1,

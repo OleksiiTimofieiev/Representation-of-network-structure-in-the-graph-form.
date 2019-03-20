@@ -1,15 +1,7 @@
 #include "../includes/lexer.hpp"
 
-/*
-***************************************************** constructors left empty as the object is a functor type **********************************************
-*/
-
 Lexer::Lexer() {}
 Lexer::~Lexer() {}
-
-/*
-***************************************************** input validation function  **********************************************
-*/
 
 std::pair<Vertex, Vertex> Lexer::regex_check(std::string str) const
 {
