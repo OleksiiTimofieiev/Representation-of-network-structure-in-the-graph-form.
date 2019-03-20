@@ -1,4 +1,5 @@
 NAME		=	infiniBand_network_graph
+FLAGS		= 	-Wall -Werror -Wextra
 COMPILER	=	g++ -std=c++11
 
 DIR_INC		=	./includes/
@@ -43,7 +44,7 @@ $(NAME): $(OBJ)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.cpp $(INC_PATH)
 	@echo "\033[0;33mCompiling: \033[0;32m[OK] \033[0m       \033[0m" $<
-	@$(COMPILER) $(INC) -c -o $@ $<
+	@$(COMPILER) $(FLAGS) $(INC) -c -o $@ $<
 
 clean:
 	@rm -rf $(DIR_OBJ)
